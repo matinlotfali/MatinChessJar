@@ -1,8 +1,6 @@
 package Structures;
 
-import Pieces.King;
-import Pieces.Piece;
-import Pieces.Rook;
+import Pieces.*;
 
 import java.util.List;
 import java.util.Stack;
@@ -20,6 +18,7 @@ public class Board {
     public King BlackKing = null;
     public int moveCount = 0;
     private final Stack<BoardHistory> boardHistory = new Stack<BoardHistory>();
+    public final void ClearHistory() { boardHistory.clear(); }
 
     public Board()
     {
@@ -28,37 +27,37 @@ public class Board {
                 squares[file][rank] = new Square(file,rank);
 
         new King(squares[4][7],White,this);
-//        new WhitePawn(squares[0][6],this);
-//        new WhitePawn(squares[1][6],this);
-//        new WhitePawn(squares[2][6],this);
-//        new WhitePawn(squares[3][6],this);
-//        new WhitePawn(squares[4][6],this);
-//        new WhitePawn(squares[5][6],this);
-//        new WhitePawn(squares[6][6],this);
-//        new WhitePawn(squares[7][6],this);
+        new WhitePawn(squares[0][6],this);
+        new WhitePawn(squares[1][6],this);
+        new WhitePawn(squares[2][6],this);
+        new WhitePawn(squares[3][6],this);
+        new WhitePawn(squares[4][6],this);
+        new WhitePawn(squares[5][6],this);
+        new WhitePawn(squares[6][6],this);
+        new WhitePawn(squares[7][6],this);
         new Rook(squares[0][7],White,this);
-//        new Knight(squares[1][7],White,this);
-//        new Bishop(squares[2][7],White,this);
-//        new Queen(squares[3][7],White,this);
-//        new Bishop(squares[5][7],White,this);
-//        new Knight(squares[6][7],White,this);
+        new Knight(squares[1][7],White,this);
+        new Bishop(squares[2][7],White,this);
+        new Queen(squares[3][7],White,this);
+        new Bishop(squares[5][7],White,this);
+        new Knight(squares[6][7],White,this);
         new Rook(squares[7][7],White,this);
 
         new King(squares[4][0],Black,this);
-//        new BlackPawn(squares[0][1],this);
-//        new BlackPawn(squares[1][1],this);
-//        new BlackPawn(squares[2][1],this);
-//        new BlackPawn(squares[3][1],this);
-//        new BlackPawn(squares[4][1],this);
-//        new BlackPawn(squares[5][1],this);
-//        new BlackPawn(squares[6][1],this);
-//        new BlackPawn(squares[7][1],this);
+        new BlackPawn(squares[0][1],this);
+        new BlackPawn(squares[1][1],this);
+        new BlackPawn(squares[2][1],this);
+        new BlackPawn(squares[3][1],this);
+        new BlackPawn(squares[4][1],this);
+        new BlackPawn(squares[5][1],this);
+        new BlackPawn(squares[6][1],this);
+        new BlackPawn(squares[7][1],this);
         new Rook(squares[0][0],Black,this);
-//        new Knight(squares[1][0],Black,this);
-//        new Bishop(squares[2][0],Black,this);
-//        new Queen(squares[3][0],Black,this);
-//        new Bishop(squares[5][0],Black,this);
-//        new Knight(squares[6][0],Black,this);
+        new Knight(squares[1][0],Black,this);
+        new Bishop(squares[2][0],Black,this);
+        new Queen(squares[3][0],Black,this);
+        new Bishop(squares[5][0],Black,this);
+        new Knight(squares[6][0],Black,this);
         new Rook(squares[7][0],Black,this);
     }
 

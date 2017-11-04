@@ -20,7 +20,7 @@ public class Rook extends Piece {
 
     @Override
     public List<Square> GetNextMoves(boolean checkKing) {
-        List<Square> nextMoves = new ArrayList<Square>();
+        List<Square> nextMoves = new ArrayList<Square>(16);
 
         //TODO
         //if(Game::GetInstance()->GetTurn() != color)

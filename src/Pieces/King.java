@@ -108,7 +108,7 @@ public class King extends Piece {
 
     public List<Square> GetNextMoves(final boolean checkKing)
     {
-        List<Square> nextMoves = new ArrayList<Square>();
+        List<Square> nextMoves = new ArrayList<Square>(10);
 
         //TODO
         //if(Game::GetInstance()->GetTurn() != color)
