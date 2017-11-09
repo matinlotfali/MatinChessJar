@@ -88,16 +88,19 @@ class Board {
         return result;
     }
 
-    int GetThreatCount(final ChessSquare square, final PieceColor color)
+    int GetThreatCount(final ChessSquare square, final PieceColor color, final boolean checkKing)
     {
         int result = 0;
         for (ChessSquare[] u : squares)
             for(ChessSquare s : u) {
                 Piece piece = s.piece;
                 if (piece != null && piece.color != color) {
+                    if(!checkKing && piece instanceof King)
+                        continue;
+
                     List<ChessSquare> list = piece.GetNextMoves(false);
                     for(ChessSquare sc : list)
-                        if(sc == square)
+                        if(sc.equals(square))
                             result++;
                 }
             }

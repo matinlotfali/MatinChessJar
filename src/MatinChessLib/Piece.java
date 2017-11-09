@@ -74,8 +74,6 @@ abstract class Piece {
 
         board.moveCount++;
         board.AddToHistory(this);
-
-        MatinChess.GetInstance().ToggleTurn();
     }
 
     void MoveBack(final ChessSquare square)
@@ -87,8 +85,6 @@ abstract class Piece {
 
         board.moveCount--;
         board.RemoveLastFromHistory();
-
-        MatinChess.GetInstance().ToggleTurn();
     }
 
     int GetScore() { return GetScore(true); }
@@ -100,7 +96,7 @@ abstract class Piece {
                 color == PieceColor.White?
                         PieceColor.Black:
                         PieceColor.White;
-        score = board.GetThreatCount(_location,opponentColor);
+        score = board.GetThreatCount(_location,opponentColor, true);
         score -= GetThreatCount();
         score *= 10;
 
@@ -117,7 +113,7 @@ abstract class Piece {
 
     int GetThreatCount()
     {
-        return board.GetThreatCount(_location,color);
+        return board.GetThreatCount(_location,color, !(this instanceof King));
     }
 
     List<ChessSquare> GetNextMoves() { return GetNextMoves(true);}

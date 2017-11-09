@@ -112,9 +112,6 @@ class King extends Piece {
     {
         List<ChessSquare> nextMoves = new ArrayList<>(10);
 
-        if (MatinChess.GetInstance().GetTurn() != color)
-            return nextMoves;
-
         final byte x = _location.file;
         final byte y = _location.rank;
 
@@ -144,17 +141,17 @@ class King extends Piece {
 
         if(GetMoveCount() == 0 && GetThreatCount() == 0)
         {
-            if(board.squares[x+1][y].piece == null && board.GetThreatCount(board.squares[x+1][y],color)== 0
-                && board.squares[x+2][y].piece == null && board.GetThreatCount(board.squares[x+2][y],color)== 0)
+            if(board.squares[x+1][y].piece == null && board.GetThreatCount(board.squares[x+1][y],color, false)== 0
+                && board.squares[x+2][y].piece == null && board.GetThreatCount(board.squares[x+2][y],color, false)== 0)
             {
                 Piece piece = board.squares[x+3][y].piece;
                 if(piece != null && piece instanceof Rook && piece.GetMoveCount()==0 && piece.GetThreatCount() == 0)
                     nextMoves.add(board.squares[x+2][y]);
             }
 
-            if(board.squares[x-1][y].piece == null && board.GetThreatCount(board.squares[x-1][y],color) == 0
-                && board.squares[x-2][y].piece == null && board.GetThreatCount(board.squares[x-2][y],color) == 0
-                && board.squares[x-3][y].piece == null && board.GetThreatCount(board.squares[x-3][y],color) == 0)
+            if(board.squares[x-1][y].piece == null && board.GetThreatCount(board.squares[x-1][y],color, false) == 0
+                && board.squares[x-2][y].piece == null && board.GetThreatCount(board.squares[x-2][y],color, false) == 0
+                && board.squares[x-3][y].piece == null && board.GetThreatCount(board.squares[x-3][y],color, false) == 0)
             {
                 Piece piece = board.squares[x-4][y].piece;
                 if(piece != null && piece instanceof Rook && piece.GetMoveCount()==0 && piece.GetThreatCount()==0)

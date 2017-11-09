@@ -25,9 +25,6 @@ class Rook extends Piece {
     final List<ChessSquare> GetNextMoves(boolean checkKing) {
         final List<ChessSquare> nextMoves = new ArrayList<>(16);
 
-        if (MatinChess.GetInstance().GetTurn() != color)
-            return nextMoves;
-
         final byte x = _location.file;
         final byte y = _location.rank;
         for(int i=x+1; i<8; i++)

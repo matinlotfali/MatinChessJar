@@ -26,9 +26,6 @@ class Knight extends Piece {
     List<ChessSquare> GetNextMoves(final boolean checkKing) {
         final List<ChessSquare> nextMoves = new ArrayList<>(8);
 
-        if (MatinChess.GetInstance().GetTurn() != color)
-            return nextMoves;
-
         final byte x = _location.file;
         final byte y = _location.rank;
 

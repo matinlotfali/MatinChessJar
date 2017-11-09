@@ -27,8 +27,6 @@ class BlackPawn extends Pawn {
     List<ChessSquare> GetNextMoves(boolean checkKing) {
         List<ChessSquare> nextMoves = new ArrayList<>(4);
 
-        if (MatinChess.GetInstance().GetTurn() != color)
-            return nextMoves;
 
         byte x = _location.file;
         byte y = _location.rank;
@@ -38,14 +36,14 @@ class BlackPawn extends Pawn {
         if(y+1 < 8)
         {
             piece = board.squares[x][y+1].piece;
-            if(piece != null)
+            if(piece == null)
             {
                 Append(board.squares[x][y+1],nextMoves,checkKing);
 
                 if(y == 1)
                 {
                     piece = board.squares[x][3].piece;
-                    if(piece != null)
+                    if(piece == null)
                         Append(board.squares[x][3],nextMoves,checkKing);
                 }
             }

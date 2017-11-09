@@ -1,3 +1,3 @@
 package MatinChessLib;
 
-enum PieceColor {   Black,  White };
+public enum PieceColor {Black, White};

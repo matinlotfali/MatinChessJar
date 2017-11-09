@@ -25,9 +25,6 @@ class Bishop extends Piece {
     List<ChessSquare> GetNextMoves(boolean checkKing) {
         List<ChessSquare> nextMoves = new ArrayList<>(64);
 
-        if (MatinChess.GetInstance().GetTurn() != color)
-            return nextMoves;
-
         final byte x = _location.file;
         final byte y = _location.rank;
         for (int i = x + 1, j = y + 1; i < 8 && j < 8; i++, j++)

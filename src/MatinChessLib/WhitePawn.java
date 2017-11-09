@@ -23,9 +23,6 @@ class WhitePawn extends Pawn {
     final List<ChessSquare> GetNextMoves(boolean checkKing) {
         final List<ChessSquare> nextMoves = new ArrayList<ChessSquare>(4);
 
-        if (MatinChess.GetInstance().GetTurn() != color)
-            return nextMoves;
-
         final byte x = _location.file;
         final byte y = _location.rank;
 
@@ -34,14 +31,14 @@ class WhitePawn extends Pawn {
         if(y-1 >= 0)
         {
             piece = board.squares[x][y-1].piece;
-            if(piece != null)
+            if(piece == null)
             {
                 Append(board.squares[x][y-1],nextMoves,checkKing);
 
                 if(y == 6)
                 {
                     piece = board.squares[x][4].piece;
-                    if(piece != null)
+                    if(piece == null)
                         Append(board.squares[x][4],nextMoves,checkKing);
                 }
             }

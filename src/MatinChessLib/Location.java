@@ -10,6 +10,11 @@ public class Location {
         this.rank = rank;
     }
 
+    public boolean isValid()
+    {
+        return  file >= 0 && file< 8 && rank >= 0 && rank < 8;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof Location)

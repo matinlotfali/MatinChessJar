@@ -52,8 +52,8 @@ public class MatinChess {
             for(ChessSquare s : sq)
             {
                 final Piece piece = s.piece;
-                if(piece != null)
-                    nextMovesList.put(piece, piece.GetNextMoves(false));
+                if(piece != null && turn == piece.color)
+                    nextMovesList.put(piece, piece.GetNextMoves(true));
             }
 //        final int count = nextMovesList.size();
 
@@ -109,12 +109,14 @@ public class MatinChess {
                 final ChessSquare locationFrom = nextMovePieces.GetLocation();
                 final Piece pieceRemoved = locationTo.piece;
                 nextMovePieces.MovePiece(locationTo);
+                ToggleTurn();
 
                 if((turn==White && board.BlackKing.GetThreatCount() > 0) ||
                         (turn==Black && board.WhiteKing.GetThreatCount() > 0))
                 {
                     moveCount--;
                     nextMovePieces.MoveBack(locationFrom);
+                    ToggleTurn();
                     locationTo.piece = pieceRemoved;
                     continue;
                 }
@@ -123,6 +125,7 @@ public class MatinChess {
                 int result = AlphaBetaPurning(alpha, beta);
                 currentDepth--;
                 nextMovePieces.MoveBack(locationFrom);
+                ToggleTurn();
                 locationTo.piece = pieceRemoved;
 
                 if(currentDepth % 2 == 0)
@@ -152,7 +155,7 @@ public class MatinChess {
     private void MovePiece(final ChessSquare from, final ChessSquare to, final MoveResult result)
     {
         result.result = OK;
-        result.secondaryMove = result.primaryMove = new Movement(from ,to);
+        result.primaryMove = new Movement(from ,to);
 
         final Piece fromPieceBeforeMove = from.piece;
         final Piece toPieceBeforeMove = to.piece;
@@ -161,6 +164,7 @@ public class MatinChess {
             result.kickedPiece = result.primaryMove.to;
 
         from.piece.MovePiece(to);
+        ToggleTurn();
 
         if(to.piece instanceof King) {
             if (((King) to.piece).GetRookMoved())
@@ -205,6 +209,9 @@ public class MatinChess {
     {
         MoveResult result = new MoveResult();
 
+        if (GetTurn() != White)
+            return result;
+
         final ChessSquare from = board.squares[movement.from.file][movement.from.rank];
         if(from.piece == null)
         {
@@ -224,16 +231,19 @@ public class MatinChess {
         return result;
     }
 
-    public List<ChessSquare> GetNextMoves(final ChessSquare square)
+    public List<Location> GetNextMoves(final Location square)
     {
         if(isPlayingAI)
+            return null;
+
+        if (GetTurn() != White)
             return null;
 
         final ChessSquare from = board.squares[square.file][square.rank];
         if(from.piece == null)
             return null;
 
-        return from.piece.GetNextMoves();
+        return new ArrayList<>(from.piece.GetNextMoves());
     }
 
     public PlayState CheckState()
