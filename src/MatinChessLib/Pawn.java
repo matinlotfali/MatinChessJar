@@ -1,28 +1,24 @@
-package Pieces;
-
-import Structures.Board;
-import Structures.PieceColor;
-import Structures.Square;
+package MatinChessLib;
 
 import java.util.List;
 import java.util.Stack;
 
-public abstract class Pawn extends Piece {
+abstract class Pawn extends Piece {
 
-    private Square deletedPiece;
+    private ChessSquare deletedPiece;
     private boolean hasDeletedPiece;
-    public boolean GetHasDeletedPiece() {return hasDeletedPiece;}
+    boolean GetHasDeletedPiece() {return hasDeletedPiece;}
 
-    private Stack<Piece> deletedPieces;
-    public Square GetDeletedPiece() {return deletedPiece;}
+    private Stack<Piece> deletedPieces = new Stack<>();
+    ChessSquare GetDeletedPiece() {return deletedPiece;}
 
-    public Pawn(final Square location, final PieceColor color, final Board board)
+    Pawn(final ChessSquare location, final PieceColor color, final Board board)
     {
         super(location,color,board);
     }
 
     @Override
-    public void MovePiece(Square square) {
+    void MovePiece(ChessSquare square) {
         hasDeletedPiece = false;
         super.MovePiece(square);
         switch (square.rank)
@@ -70,7 +66,7 @@ public abstract class Pawn extends Piece {
     }
 
     @Override
-    public void MoveBack(Square square) {
+    void MoveBack(ChessSquare square) {
         hasDeletedPiece = false;
         switch (_location.rank)
         {
@@ -103,11 +99,11 @@ public abstract class Pawn extends Piece {
         super.MoveBack(square);
     }
 
-    protected void Append(final Square square, List<Square> nextMoves, final boolean checkKing)
+    protected void Append(final ChessSquare square, List<ChessSquare> nextMoves, final boolean checkKing)
     {
         if(checkKing)
         {
-            final Square from = _location;
+            final ChessSquare from = _location;
             final Piece deletedPiece = square.piece;
             MovePiece(square);
             if(myKing.GetThreatCount() == 0)

@@ -1,32 +1,30 @@
-package Structures;
-
-import Pieces.*;
+package MatinChessLib;
 
 import java.util.List;
 import java.util.Stack;
 
-import static Structures.PieceColor.Black;
-import static Structures.PieceColor.White;
+import static MatinChessLib.PieceColor.Black;
+import static MatinChessLib.PieceColor.White;
 
-public class Board {
-    public final static byte
+class Board {
+    final static byte
             A=0,   B=1,    C=2,    D=3,    E=4,    F=5,    G=6,    H=7,
             R1=0,  R2=1,   R3=2,   R4=3,   R5=4,   R6=5,   R7=6,   R8=7;
 
-    public final Square[][] squares = new Square[8][8];
-    public King WhiteKing = null;
-    public King BlackKing = null;
-    public int moveCount = 0;
+    final ChessSquare[][] squares = new ChessSquare[8][8];
+    King WhiteKing = null;
+    King BlackKing = null;
+    int moveCount = 0;
     private final Stack<BoardHistory> boardHistory = new Stack<BoardHistory>();
-    public final void ClearHistory() { boardHistory.clear(); }
+    final void ClearHistory() { boardHistory.clear(); }
 
-    public Board()
+    Board()
     {
         for(byte file = A; file<8; file++)
             for(byte rank = R1; rank<8; rank++)
-                squares[file][rank] = new Square(file,rank);
+                squares[file][rank] = new ChessSquare(file,rank);
 
-        new King(squares[4][7],White,this);
+        new King(squares[4][7], White,this);
         new WhitePawn(squares[0][6],this);
         new WhitePawn(squares[1][6],this);
         new WhitePawn(squares[2][6],this);
@@ -61,11 +59,11 @@ public class Board {
         new Rook(squares[7][0],Black,this);
     }
 
-    public int GetScore()
+    int GetScore()
     {
         int score = 0;
-        for (Square[] u : squares)
-            for(Square s : u)
+        for (ChessSquare[] u : squares)
+            for(ChessSquare s : u)
             {
                 Piece piece = s.piece;
                 if(piece != null)
@@ -77,11 +75,11 @@ public class Board {
         return score;
     }
 
-    public int GetNextMovesCount()
+    int GetNextMovesCount()
     {
         int result = 0;
-        for (Square[] u : squares)
-            for(Square s : u)
+        for (ChessSquare[] u : squares)
+            for(ChessSquare s : u)
             {
                 Piece piece = s.piece;
                 if(piece != null)
@@ -90,15 +88,15 @@ public class Board {
         return result;
     }
 
-    public int GetThreatCount(final Square square, final PieceColor color)
+    int GetThreatCount(final ChessSquare square, final PieceColor color)
     {
         int result = 0;
-        for (Square[] u : squares)
-            for(Square s : u) {
+        for (ChessSquare[] u : squares)
+            for(ChessSquare s : u) {
                 Piece piece = s.piece;
                 if (piece != null && piece.color != color) {
-                    List<Square> list = piece.GetNextMoves(true);
-                    for(Square sc : list)
+                    List<ChessSquare> list = piece.GetNextMoves(false);
+                    for(ChessSquare sc : list)
                         if(sc == square)
                             result++;
                 }
@@ -106,19 +104,19 @@ public class Board {
         return result;
     }
 
-    public void AddToHistory(final Piece piece)
+    void AddToHistory(final Piece piece)
     {
         BoardHistory history = new BoardHistory(this);
         history.movedPiece = piece;
         boardHistory.push(history);
     }
 
-    public void RemoveLastFromHistory()
+    void RemoveLastFromHistory()
     {
         boardHistory.pop();
     }
 
-    public boolean IsThreefold()
+    boolean IsThreefold()
     {
         int count = 0;
         for(BoardHistory b : boardHistory)
@@ -127,7 +125,7 @@ public class Board {
         return count >= 3;
     }
 
-    public boolean IsFiftyMove()
+    boolean IsFiftyMove()
     {
         return boardHistory.size() > 50;
     }

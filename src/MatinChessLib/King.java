@@ -1,18 +1,15 @@
-package Pieces;
-
-import Structures.Board;
-import Structures.Movement;
-import Structures.PieceColor;
-import Structures.Square;
+package MatinChessLib;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class King extends Piece {
+import static MatinChessLib.PieceColor.White;
+
+class King extends Piece {
     private boolean _rookMoved = false;
     private Movement _rookMovement;
 
-    public King(final Square location, final PieceColor color, final Board board) {
+    King(final ChessSquare location, final PieceColor color, final Board board) {
         super(location, color, board);
         if (color == PieceColor.White)
             board.WhiteKing = this;
@@ -21,7 +18,12 @@ public class King extends Piece {
         this.myKing = this;
     }
 
-    public Boolean IsCheckMate() {
+    @Override
+    char GetChar() {
+        return color == White ? 'k' : 'K';
+    }
+
+    Boolean IsCheckMate() {
         if(GetThreatCount() > 0)
         {
             int count = board.GetNextMovesCount();
@@ -31,10 +33,10 @@ public class King extends Piece {
         return false;
     }
 
-    public int GetScore() {
+    int GetScore() {
         return GetScore(true);
     }
-    public int GetScore(final Boolean nextMoves) {
+    int GetScore(final Boolean nextMoves) {
         if (IsCheckMate())
             return Integer.MIN_VALUE;
 
@@ -46,7 +48,7 @@ public class King extends Piece {
         return score;
     }
 
-    public void MovePiece(final Square square) {
+    void MovePiece(final ChessSquare square) {
         _rookMoved = false;
         if(GetMoveCount() == 0)
         {
@@ -74,7 +76,7 @@ public class King extends Piece {
         super.MovePiece(square);
     }
 
-    public void MoveBack(final Square square) {
+    void MoveBack(final ChessSquare square) {
         _rookMoved = false;
         if(GetMoveCount() == 1)
         {
@@ -98,24 +100,23 @@ public class King extends Piece {
         super.MoveBack(square);
     }
 
-    public Boolean GetRookMoved() {
+    Boolean GetRookMoved() {
         return _rookMoved;
     }
 
-    public Movement GetRookMovement() {
+    Movement GetRookMovement() {
         return _rookMovement;
     }
 
-    public List<Square> GetNextMoves(final boolean checkKing)
+    List<ChessSquare> GetNextMoves(final boolean checkKing)
     {
-        List<Square> nextMoves = new ArrayList<Square>(10);
+        List<ChessSquare> nextMoves = new ArrayList<>(10);
 
-        //TODO
-        //if(Game::GetInstance()->GetTurn() != color)
-        //    return nextMoves;
+        if (MatinChess.GetInstance().GetTurn() != color)
+            return nextMoves;
 
-        byte x = _location.file;
-        byte y = _location.rank;
+        final byte x = _location.file;
+        final byte y = _location.rank;
 
         if(x<7)
             AppendSquare(x+1,y,nextMoves,checkKing);

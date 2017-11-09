@@ -1,33 +1,33 @@
-package Pieces;
-
-import Structures.Board;
-import Structures.PieceColor;
-import Structures.Square;
+package MatinChessLib;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class WhitePawn extends Pawn {
-    public WhitePawn(final Square location, final Board board)
+class WhitePawn extends Pawn {
+    WhitePawn(final ChessSquare location, final Board board)
     {
-        super(location,PieceColor.White,board);
+        super(location, PieceColor.White,board);
     }
 
     @Override
-    public int GetScore(boolean nextMoves) {
+    final char GetChar() {
+        return 'p';
+    }
+
+    @Override
+    final int GetScore(boolean nextMoves) {
         return super.GetScore(nextMoves) + (7 - _location.rank)*20 + 80;
     }
 
     @Override
-    public List<Square> GetNextMoves(boolean checkKing) {
-        List<Square> nextMoves = new ArrayList<Square>(4);
+    final List<ChessSquare> GetNextMoves(boolean checkKing) {
+        final List<ChessSquare> nextMoves = new ArrayList<ChessSquare>(4);
 
-        //TODO
-        //if(Game::GetInstance()->GetTurn() != color)
-        //return nextMoves;
+        if (MatinChess.GetInstance().GetTurn() != color)
+            return nextMoves;
 
-        byte x = _location.file;
-        byte y = _location.rank;
+        final byte x = _location.file;
+        final byte y = _location.rank;
 
         Piece piece;
 

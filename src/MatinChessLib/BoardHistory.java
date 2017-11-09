@@ -1,16 +1,21 @@
-package Structures;
-
-import Pieces.Piece;
+package MatinChessLib;
 
 class BoardHistory {
-    Piece[][] pieces = new Piece[8][8];
+    private Piece[][] pieces = new Piece[8][8];
     Piece movedPiece;
 
-    public BoardHistory(Board board)
+    BoardHistory(Board board)
     {
         for(int i=0; i<8; i++)
             for(int j=0; j<8; j++)
                 pieces[i][j] = board.squares[i][j].piece;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Board)
+            return isEqual((Board)obj);
+        return false;
     }
 
     boolean isEqual(Board board)

@@ -1,4 +1,4 @@
-package Structures;
+package MatinChessLib;
 
 public enum PlayState {
     None,

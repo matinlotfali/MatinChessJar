@@ -1,20 +1,15 @@
-import Pieces.King;
-import Pieces.Pawn;
-import Pieces.Piece;
-import Pieces.Queen;
-import Structures.*;
+package MatinChessLib;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-import static Structures.PieceColor.Black;
-import static Structures.PieceColor.White;
-import static Structures.PieceMoveResult.CanNotMoveThere;
-import static Structures.PieceMoveResult.NoPieceThere;
-import static Structures.PieceMoveResult.OK;
-import static Structures.PlayState.*;
+import static MatinChessLib.PieceColor.Black;
+import static MatinChessLib.PieceColor.White;
+import static MatinChessLib.PieceMoveResult.CanNotMoveThere;
+import static MatinChessLib.PieceMoveResult.NoPieceThere;
+import static MatinChessLib.PieceMoveResult.OK;
+import static MatinChessLib.PlayState.*;
 
-public class MatinChessLib {
+public class MatinChess {
     private PieceColor turn = White;
     public PieceColor GetTurn()
     {
@@ -33,19 +28,15 @@ public class MatinChessLib {
     public Board board = new Board();
     private Random random = new Random();
     private boolean isPlayingAI = false;
-    private static MatinChessLib instance = null;
-    public static MatinChessLib GetInstance()
+    private static MatinChess instance = null;
+    public static MatinChess GetInstance()
     {
+        if(instance == null) instance = new MatinChess();
         return instance;
     }
 
     private Movement movementResult;
     private byte currentDepth;
-
-    private MatinChessLib()
-    {
-        instance = this;
-    }
 
     private int AlphaBetaPurning(int alpha, int beta)
     {
@@ -55,10 +46,10 @@ public class MatinChessLib {
         if(currentDepth >= MaxDepth)
             return board.GetScore();
 
-        final HashMap<Piece, List<Square>> nextMovesList = new HashMap<>();
+        final HashMap<Piece, List<ChessSquare>> nextMovesList = new HashMap<>();
 
-        for(Square[] sq : board.squares)
-            for(Square s : sq)
+        for(ChessSquare[] sq : board.squares)
+            for(ChessSquare s : sq)
             {
                 final Piece piece = s.piece;
                 if(piece != null)
@@ -112,10 +103,10 @@ public class MatinChessLib {
         int moveCount = 0;
         for(final Piece nextMovePieces : nextMovesList.keySet())
         {
-            for(final Square locationTo : nextMovesList.get(nextMovePieces))
+            for(final ChessSquare locationTo : nextMovesList.get(nextMovePieces))
             {
                 moveCount++;
-                final Square locationFrom = nextMovePieces.GetLocation();
+                final ChessSquare locationFrom = nextMovePieces.GetLocation();
                 final Piece pieceRemoved = locationTo.piece;
                 nextMovePieces.MovePiece(locationTo);
 
@@ -158,36 +149,26 @@ public class MatinChessLib {
         return (currentDepth % 2 == 0)? alpha: beta;
     }
 
-    private void MovePiece(final Square from, final Square to, final MoveResult result)
+    private void MovePiece(final ChessSquare from, final ChessSquare to, final MoveResult result)
     {
         result.result = OK;
-        result.secondaryMove = new Movement(from, to);
-        result.hasSecondaryMove = false;
-        result.hasPromoted = false;
-        result.hasKickedAPiece = false;
+        result.secondaryMove = result.primaryMove = new Movement(from ,to);
 
         final Piece fromPieceBeforeMove = from.piece;
         final Piece toPieceBeforeMove = to.piece;
 
         if(toPieceBeforeMove != null)
-        {
-            result.hasKickedAPiece = true;
             result.kickedPiece = result.primaryMove.to;
-        }
 
         from.piece.MovePiece(to);
 
         if(to.piece instanceof King) {
-            if (((King) to.piece).GetRookMoved()) {
-                result.hasSecondaryMove = true;
+            if (((King) to.piece).GetRookMoved())
                 result.secondaryMove = ((King) to.piece).GetRookMovement();
-            }
         }
         else if (to.piece instanceof Pawn) {
-                if (((Pawn) to.piece).GetHasDeletedPiece()) {
-                    result.hasKickedAPiece = true;
+                if (((Pawn) to.piece).GetHasDeletedPiece())
                     result.kickedPiece = ((Pawn) to.piece).GetDeletedPiece();
-                }
         }
         else if (to.piece instanceof Queen) {
             if(fromPieceBeforeMove instanceof Pawn)
@@ -195,7 +176,7 @@ public class MatinChessLib {
         }
     }
 
-    private void ToggleTurn()
+    void ToggleTurn()
     {
         turn = turn == White? Black: White;
     }
@@ -205,11 +186,11 @@ public class MatinChessLib {
         isPlayingAI = true;
         currentDepth = 0;
         MoveResult result = new MoveResult();
-        movementResult = result.primaryMove;
         AlphaBetaPurning(Integer.MIN_VALUE, Integer.MAX_VALUE);
+        result.primaryMove = movementResult;
 
         Piece piece = board.squares[result.primaryMove.from.file][result.primaryMove.from.rank].piece;
-        Square squareTo = board.squares[result.primaryMove.to.file][result.primaryMove.to.rank];
+        ChessSquare squareTo = board.squares[result.primaryMove.to.file][result.primaryMove.to.rank];
 
         MovePiece(piece.GetLocation(), squareTo, result);
 
@@ -224,16 +205,16 @@ public class MatinChessLib {
     {
         MoveResult result = new MoveResult();
 
-        final Square from = board.squares[movement.from.file][movement.from.rank];
+        final ChessSquare from = board.squares[movement.from.file][movement.from.rank];
         if(from.piece == null)
         {
             result.result = NoPieceThere;
             return result;
         }
 
-        final Square to = board.squares[movement.to.file][movement.to.rank];
+        final ChessSquare to = board.squares[movement.to.file][movement.to.rank];
 
-        List<Square> list = from.piece.GetNextMoves();
+        List<ChessSquare> list = from.piece.GetNextMoves();
         if(!list.contains(to)) {
             result.result = CanNotMoveThere;
             return result;
@@ -243,12 +224,12 @@ public class MatinChessLib {
         return result;
     }
 
-    public List<Square> GetNextMoves(final Square square)
+    public List<ChessSquare> GetNextMoves(final ChessSquare square)
     {
         if(isPlayingAI)
             return null;
 
-        final Square from = board.squares[square.file][square.rank];
+        final ChessSquare from = board.squares[square.file][square.rank];
         if(from.piece == null)
             return null;
 
@@ -272,5 +253,11 @@ public class MatinChessLib {
             return WhiteCheck;
         else
             return None;
+    }
+
+    public char ReadBoard(int x,int y)
+    {
+        final Piece p = board.squares[x][y].piece;
+        return p == null? ' ' : p.GetChar();
     }
 }

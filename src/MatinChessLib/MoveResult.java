@@ -1,11 +1,9 @@
-package Structures;
+package MatinChessLib;
 
 public class MoveResult {
     public PieceMoveResult result;
     public boolean hasPromoted;
-    public boolean hasKickedAPiece;
-    public boolean hasSecondaryMove;
-    public Square kickedPiece;
+    public Location kickedPiece;
     public Movement primaryMove;
     public Movement secondaryMove;
 }

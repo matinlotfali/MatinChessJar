@@ -1,20 +1,18 @@
-package Pieces;
+package MatinChessLib;
 
-import Structures.Board;
-import Structures.PieceColor;
-import Structures.Square;
 import java.util.List;
 
-public abstract class Piece {
+abstract class Piece {
     int _moveCount;
-    Square _location;
+    protected ChessSquare _location;
+    ChessSquare GetLocation() { return _location; }
+
     protected King myKing;
     protected int twoStepMoveIndexOnBoard;
     public final Board board;
     public final PieceColor color;
-    public Square GetLocation() { return _location; }
 
-    public Piece(final Square location, final PieceColor color, final Board board)
+    Piece(final ChessSquare location, final PieceColor color, final Board board)
     {
         this.color = color;
         _location = location;
@@ -25,14 +23,14 @@ public abstract class Piece {
                 board.BlackKing;
     }
 
-    protected boolean AppendSquare(final int i, final int j, final List<Square> nextMoves, final Boolean checkKing)
+    protected boolean AppendSquare(final int i, final int j, final List<ChessSquare> nextMoves, final Boolean checkKing)
     {
-        Square square = board.squares[i][j];
+        ChessSquare square = board.squares[i][j];
         if(square.piece == null)
         {
             if(checkKing)
             {
-                Square from = _location;
+                ChessSquare from = _location;
                 MovePiece(square);
                 if(myKing.GetThreatCount() == 0)
                     nextMoves.add(square);
@@ -49,7 +47,7 @@ public abstract class Piece {
             {
                 if(checkKing)
                 {
-                    Square from = _location;
+                    ChessSquare from = _location;
                     Piece deletedPiece = square.piece;
                     MovePiece(square);
                     if(myKing.GetThreatCount() == 0)
@@ -64,10 +62,10 @@ public abstract class Piece {
         }
     }
 
-    public int GetTwoStepMoveIndexOnBoard() { return twoStepMoveIndexOnBoard; }
-    public int GetMoveCount() { return _moveCount; }
+    int GetTwoStepMoveIndexOnBoard() { return twoStepMoveIndexOnBoard; }
+    int GetMoveCount() { return _moveCount; }
 
-    public void MovePiece(final Square square)
+    void MovePiece(final ChessSquare square)
     {
         _location.piece = null;
         square.piece = this;
@@ -76,11 +74,11 @@ public abstract class Piece {
 
         board.moveCount++;
         board.AddToHistory(this);
-        //TODO
-        //Game::GetInstance()->ToggleTurn();
+
+        MatinChess.GetInstance().ToggleTurn();
     }
 
-    public void MoveBack(final Square square)
+    void MoveBack(final ChessSquare square)
     {
         _location.piece = null;
         square.piece = this;
@@ -89,12 +87,12 @@ public abstract class Piece {
 
         board.moveCount--;
         board.RemoveLastFromHistory();
-        //TODO
-        //Game::GetInstance()->ToggleTurn();
+
+        MatinChess.GetInstance().ToggleTurn();
     }
 
-    public int GetScore() { return GetScore(true); }
-    public int GetScore(final boolean nextMoves)
+    int GetScore() { return GetScore(true); }
+    int GetScore(final boolean nextMoves)
     {
         int score;
 
@@ -117,16 +115,17 @@ public abstract class Piece {
         return score;
     }
 
-    public int GetThreatCount()
+    int GetThreatCount()
     {
         return board.GetThreatCount(_location,color);
     }
 
-    public List<Square> GetNextMoves() { return GetNextMoves(true);}
-    public abstract List<Square> GetNextMoves(final boolean checkKing);
-    public int GetNextMovesCount()
+    List<ChessSquare> GetNextMoves() { return GetNextMoves(true);}
+    abstract List<ChessSquare> GetNextMoves(final boolean checkKing);
+    abstract char GetChar();
+    int GetNextMovesCount()
     {
-        List<Square> moves = GetNextMoves();
+        List<ChessSquare> moves = GetNextMoves();
         return moves.size();
     }
 }
