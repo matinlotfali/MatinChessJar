@@ -20,7 +20,7 @@ class BlackPawn extends Pawn {
 
     @Override
     int GetScore(boolean nextMoves) {
-        return super.GetScore(nextMoves) +  _location.rank*20 + 80;
+        return super.GetScore(nextMoves) +  GetLocation().rank*20 + 80;
     }
 
     @Override
@@ -28,8 +28,8 @@ class BlackPawn extends Pawn {
         List<ChessSquare> nextMoves = new ArrayList<>(4);
 
 
-        byte x = _location.file;
-        byte y = _location.rank;
+        byte x = GetLocation().file;
+        byte y = GetLocation().rank;
 
         Piece piece;
 

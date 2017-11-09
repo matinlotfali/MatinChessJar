@@ -26,8 +26,8 @@ class Knight extends Piece {
     List<ChessSquare> GetNextMoves(final boolean checkKing) {
         final List<ChessSquare> nextMoves = new ArrayList<>(8);
 
-        final byte x = _location.file;
-        final byte y = _location.rank;
+        final byte x = GetLocation().file;
+        final byte y = GetLocation().rank;
 
         if(x<7 && y<6)
             AppendSquare(x+1,y+2,nextMoves,checkKing);

@@ -16,15 +16,15 @@ class WhitePawn extends Pawn {
 
     @Override
     final int GetScore(boolean nextMoves) {
-        return super.GetScore(nextMoves) + (7 - _location.rank)*20 + 80;
+        return super.GetScore(nextMoves) + (7 - GetLocation().rank)*20 + 80;
     }
 
     @Override
     final List<ChessSquare> GetNextMoves(boolean checkKing) {
-        final List<ChessSquare> nextMoves = new ArrayList<ChessSquare>(4);
+        final List<ChessSquare> nextMoves = new ArrayList<>(4);
 
-        final byte x = _location.file;
-        final byte y = _location.rank;
+        final byte x = GetLocation().file;
+        final byte y = GetLocation().rank;
 
         Piece piece;
 

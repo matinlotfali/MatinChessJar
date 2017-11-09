@@ -25,8 +25,8 @@ public class MatinChess {
             throw new IllegalArgumentException("Can not set zero to depth.");
     }
 
-    public Board board = new Board();
-    private Random random = new Random();
+    public final Board board = new Board();
+    private final Random random = new Random();
     private boolean isPlayingAI = false;
     private static MatinChess instance = null;
     public static MatinChess GetInstance()
@@ -38,7 +38,7 @@ public class MatinChess {
     private Movement movementResult;
     private byte currentDepth;
 
-    private int AlphaBetaPurning(int alpha, int beta)
+    private int AlphaBetaPruning(int alpha, int beta)
     {
         if(board.IsThreefold() || board.IsFiftyMove())
             return 0;
@@ -122,7 +122,7 @@ public class MatinChess {
                 }
 
                 currentDepth++;
-                int result = AlphaBetaPurning(alpha, beta);
+                int result = AlphaBetaPruning(alpha, beta);
                 currentDepth--;
                 nextMovePieces.MoveBack(locationFrom);
                 ToggleTurn();
@@ -180,7 +180,7 @@ public class MatinChess {
         }
     }
 
-    void ToggleTurn()
+    private void ToggleTurn()
     {
         turn = turn == White? Black: White;
     }
@@ -190,7 +190,7 @@ public class MatinChess {
         isPlayingAI = true;
         currentDepth = 0;
         MoveResult result = new MoveResult();
-        AlphaBetaPurning(Integer.MIN_VALUE, Integer.MAX_VALUE);
+        AlphaBetaPruning(Integer.MIN_VALUE, Integer.MAX_VALUE);
         result.primaryMove = movementResult;
 
         Piece piece = board.squares[result.primaryMove.from.file][result.primaryMove.from.rank].piece;

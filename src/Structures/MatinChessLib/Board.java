@@ -15,7 +15,7 @@ class Board {
     King WhiteKing = null;
     King BlackKing = null;
     int moveCount = 0;
-    private final Stack<BoardHistory> boardHistory = new Stack<BoardHistory>();
+    private final Stack<BoardHistory> boardHistory = new Stack<>();
     final void ClearHistory() { boardHistory.clear(); }
 
     Board()

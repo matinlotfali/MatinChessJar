@@ -9,7 +9,7 @@ abstract class Pawn extends Piece {
     private boolean hasDeletedPiece;
     boolean GetHasDeletedPiece() {return hasDeletedPiece;}
 
-    private Stack<Piece> deletedPieces = new Stack<>();
+    private final Stack<Piece> deletedPieces = new Stack<>();
     ChessSquare GetDeletedPiece() {return deletedPiece;}
 
     Pawn(final ChessSquare location, final PieceColor color, final Board board)
@@ -25,26 +25,26 @@ abstract class Pawn extends Piece {
         {
             case Board.R6:
             {
-                final Piece piece = board.squares[_location.file][Board.R5].piece;
+                final Piece piece = board.squares[GetLocation().file][Board.R5].piece;
                 if(piece != null && piece.GetTwoStepMoveIndexOnBoard() == board.moveCount - 1)
                 {
                     hasDeletedPiece = true;
-                    deletedPiece = piece._location;
+                    deletedPiece = piece.GetLocation();
                     deletedPieces.push(piece);
-                    piece._location.piece = null;
+                    piece.GetLocation().piece = null;
                 }
                 break;
             }
 
             case Board.R3:
             {
-                final Piece piece = board.squares[_location.file][Board.R4].piece;
+                final Piece piece = board.squares[GetLocation().file][Board.R4].piece;
                 if(piece != null && piece.GetTwoStepMoveIndexOnBoard() == board.moveCount - 1)
                 {
                     hasDeletedPiece = true;
-                    deletedPiece = piece._location;
+                    deletedPiece = piece.GetLocation();
                     deletedPieces.push(piece);
-                    piece._location.piece = null;
+                    piece.GetLocation().piece = null;
                 }
                 break;
             }
@@ -57,7 +57,7 @@ abstract class Pawn extends Piece {
 
             case Board.R8:
             case Board.R1:
-                new Queen(_location,color,board);
+                new Queen(GetLocation(),color,board);
                 break;
 
             default:
@@ -68,7 +68,7 @@ abstract class Pawn extends Piece {
     @Override
     void MoveBack(ChessSquare square) {
         hasDeletedPiece = false;
-        switch (_location.rank)
+        switch (GetLocation().rank)
         {
             case Board.R6:
             case Board.R3:
@@ -77,7 +77,7 @@ abstract class Pawn extends Piece {
                 {
                     Piece piece = deletedPieces.pop();
                     if(piece != null)
-                        piece._location.piece = piece;
+                        piece.GetLocation().piece = piece;
                 }
                 break;
             }
@@ -90,7 +90,7 @@ abstract class Pawn extends Piece {
 
             case Board.R8:
             case Board.R1:
-                _location.piece = this;
+                GetLocation().piece = this;
                 break;
 
             default:
@@ -99,11 +99,11 @@ abstract class Pawn extends Piece {
         super.MoveBack(square);
     }
 
-    protected void Append(final ChessSquare square, List<ChessSquare> nextMoves, final boolean checkKing)
+    void Append(final ChessSquare square, List<ChessSquare> nextMoves, final boolean checkKing)
     {
         if(checkKing)
         {
-            final ChessSquare from = _location;
+            final ChessSquare from = GetLocation();
             final Piece deletedPiece = square.piece;
             MovePiece(square);
             if(myKing.GetThreatCount() == 0)

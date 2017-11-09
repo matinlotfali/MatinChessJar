@@ -26,8 +26,8 @@ class Queen extends Piece {
     final List<ChessSquare> GetNextMoves(boolean checkKing) {
         final List<ChessSquare> nextMoves = new ArrayList<>(64);
 
-        final byte x = _location.file;
-        final byte y = _location.rank;
+        final byte x = GetLocation().file;
+        final byte y = GetLocation().rank;
 
         for(int i=x+1; i<8; i++)
             if(AppendSquare(i,y,nextMoves,checkKing))

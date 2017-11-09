@@ -23,20 +23,13 @@ class King extends Piece {
         return color == White ? 'k' : 'K';
     }
 
-    Boolean IsCheckMate() {
-        if(GetThreatCount() > 0)
-        {
-            int count = board.GetNextMovesCount();
-            if(count == 0)
-                return true;
-        }
-        return false;
-    }
+    private boolean IsCheckMate() {  return GetThreatCount() > 0 && board.GetNextMovesCount() == 0;  }
 
+    @Override
     int GetScore() {
         return GetScore(true);
     }
-    int GetScore(final Boolean nextMoves) {
+    int GetScore(final boolean nextMoves) {
         if (IsCheckMate())
             return Integer.MIN_VALUE;
 
@@ -48,6 +41,7 @@ class King extends Piece {
         return score;
     }
 
+    @Override
     void MovePiece(final ChessSquare square) {
         _rookMoved = false;
         if(GetMoveCount() == 0)
@@ -59,14 +53,14 @@ class King extends Piece {
                 if(square.file == Board.G)
                 {
                     _rookMovement = new Movement(
-                            board.squares[Board.H][_location.rank],
-                            board.squares[Board.F][_location.rank]);
+                            board.squares[Board.H][GetLocation().rank],
+                            board.squares[Board.F][GetLocation().rank]);
                 }
                 else
                 {
                     _rookMovement = new Movement(
-                            board.squares[Board.A][_location.rank],
-                            board.squares[Board.D][_location.rank]);
+                            board.squares[Board.A][GetLocation().rank],
+                            board.squares[Board.D][GetLocation().rank]);
                 }
                 piece = board.squares[_rookMovement.from.file][_rookMovement.from.rank].piece;
                 //if(piece)
@@ -76,22 +70,23 @@ class King extends Piece {
         super.MovePiece(square);
     }
 
+    @Override
     void MoveBack(final ChessSquare square) {
         _rookMoved = false;
         if(GetMoveCount() == 1)
         {
             Piece piece;
-            switch(_location.file)
+            switch(GetLocation().file)
             {
                 case Board.G:
-                    piece = board.squares[Board.F][_location.rank].piece;
+                    piece = board.squares[Board.F][GetLocation().rank].piece;
                     //if(piece)
-                    piece.MoveBack(board.squares[Board.H][_location.rank]);
+                    piece.MoveBack(board.squares[Board.H][GetLocation().rank]);
                     break;
                 case Board.C:
-                    piece = board.squares[Board.D][_location.rank].piece;
+                    piece = board.squares[Board.D][GetLocation().rank].piece;
                     //if(piece)
-                    piece.MoveBack(board.squares[Board.A][_location.rank]);
+                    piece.MoveBack(board.squares[Board.A][GetLocation().rank]);
                     break;
                 default:
                     break;
@@ -100,7 +95,7 @@ class King extends Piece {
         super.MoveBack(square);
     }
 
-    Boolean GetRookMoved() {
+    boolean GetRookMoved() {
         return _rookMoved;
     }
 
@@ -108,12 +103,13 @@ class King extends Piece {
         return _rookMovement;
     }
 
+    @Override
     List<ChessSquare> GetNextMoves(final boolean checkKing)
     {
         List<ChessSquare> nextMoves = new ArrayList<>(10);
 
-        final byte x = _location.file;
-        final byte y = _location.rank;
+        final byte x = GetLocation().file;
+        final byte y = GetLocation().rank;
 
         if(x<7)
             AppendSquare(x+1,y,nextMoves,checkKing);

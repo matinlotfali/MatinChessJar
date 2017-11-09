@@ -3,12 +3,12 @@ package MatinChessLib;
 import java.util.List;
 
 abstract class Piece {
-    int _moveCount;
-    protected ChessSquare _location;
+    private int _moveCount;
+    private ChessSquare _location;
     ChessSquare GetLocation() { return _location; }
 
-    protected King myKing;
-    protected int twoStepMoveIndexOnBoard;
+    King myKing;
+    int twoStepMoveIndexOnBoard;
     public final Board board;
     public final PieceColor color;
 
@@ -23,7 +23,7 @@ abstract class Piece {
                 board.BlackKing;
     }
 
-    protected boolean AppendSquare(final int i, final int j, final List<ChessSquare> nextMoves, final Boolean checkKing)
+    boolean AppendSquare(final int i, final int j, final List<ChessSquare> nextMoves, final Boolean checkKing)
     {
         ChessSquare square = board.squares[i][j];
         if(square.piece == null)

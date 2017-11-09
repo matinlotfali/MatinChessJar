@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/MatinChessLib/Pieces" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/MatinChessLib/Structures" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Pieces" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Structures" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

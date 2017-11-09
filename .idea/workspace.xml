@@ -3,18 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="a6522e3d-9e66-4505-ba93-8e628eeb3107" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/Bishop.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/Bishop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/BlackPawn.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/BlackPawn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/Board.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/King.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/King.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/Knight.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/Knight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/Location.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/Location.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MatinChessLib.iml" afterPath="$PROJECT_DIR$/MatinChessLib.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/MatinChess.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/MatinChess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/Piece.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/Piece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/PieceColor.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/PieceColor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/Queen.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/Queen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/Rook.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/Rook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MatinChessLib/WhitePawn.java" afterPath="$PROJECT_DIR$/src/MatinChessLib/WhitePawn.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Bishop.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/Bishop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/BlackPawn.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/BlackPawn.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Board.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/Board.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/BoardHistory.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/BoardHistory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/ChessSquare.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/ChessSquare.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/King.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/King.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Knight.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/Knight.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Location.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/Location.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/MoveResult.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/MoveResult.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Movement.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/Movement.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Pawn.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/Pawn.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Piece.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/Piece.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/PieceColor.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/PieceColor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/PieceMoveResult.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/PieceMoveResult.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/PlayState.java" afterPath="$PROJECT_DIR$/src/Structures/MatinChessLib/PlayState.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Queen.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/Queen.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/Rook.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/Rook.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MatinChessLib/WhitePawn.java" afterPath="$PROJECT_DIR$/src/Pieces/MatinChessLib/WhitePawn.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MatinChess.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MatinChess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MatinChessLib/MatinChess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="40" column="53" lean-forward="true" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+            <state relative-caret-position="-3479">
+              <caret line="31" column="42" lean-forward="false" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,17 +47,17 @@
         </entry>
       </file>
       <file leaf-file-name="King.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/King.java">
+        <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/King.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="143" column="109" lean-forward="false" selection-start-line="143" selection-start-column="109" selection-end-line="143" selection-end-column="109" />
+            <state relative-caret-position="154">
+              <caret line="139" column="60" lean-forward="false" selection-start-line="139" selection-start-column="60" selection-end-line="139" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="PlayState.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/PlayState.java">
+        <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PlayState.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
@@ -59,73 +67,76 @@
         </entry>
       </file>
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Board.java">
+        <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="98" column="33" lean-forward="false" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
+            <state relative-caret-position="289">
+              <caret line="90" column="17" lean-forward="false" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Queen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Queen.java">
+      <file leaf-file-name="Piece.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Piece.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="26" column="64" lean-forward="false" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Piece.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Piece.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="125" column="5" lean-forward="false" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+            <state relative-caret-position="1344">
+              <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
               <folding>
-                <element signature="e#3142#3143#0" expanded="true" />
-                <element signature="e#3227#3228#0" expanded="true" />
+                <element signature="e#3118#3119#0" expanded="true" />
+                <element signature="e#3203#3204#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rook.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Rook.java">
+      <file leaf-file-name="Location.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Location.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+            <state relative-caret-position="238">
+              <caret line="14" column="59" lean-forward="false" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+              <folding>
+                <element signature="e#257#258#0" expanded="true" />
+                <element signature="e#326#327#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Movement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Movement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WhitePawn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/WhitePawn.java">
+      <file leaf-file-name="MoveResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/MoveResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="23" column="74" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
+            <state relative-caret-position="85">
+              <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlackPawn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BlackPawn.java">
+      <file leaf-file-name="PieceColor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PieceColor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bishop.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Bishop.java">
+      <file leaf-file-name="PieceMoveResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PieceMoveResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+            <state relative-caret-position="85">
+              <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -150,6 +161,7 @@
       <find>List&lt;Square&gt;</find>
       <find>locationfrom</find>
       <find>locationto</find>
+      <find>() == 0</find>
     </findStrings>
     <replaceStrings>
       <replace>board</replace>
@@ -169,17 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Pieces/Knight.java" />
-        <option value="$PROJECT_DIR$/src/Pieces/Piece.java" />
-        <option value="$PROJECT_DIR$/src/Pieces/Queen.java" />
-        <option value="$PROJECT_DIR$/src/Pieces/Rook.java" />
-        <option value="$PROJECT_DIR$/src/Pieces/WhitePawn.java" />
-        <option value="$PROJECT_DIR$/src/Structures/BoardHistory.java" />
-        <option value="$PROJECT_DIR$/src/Structures/Movement.java" />
-        <option value="$PROJECT_DIR$/src/Structures/MoveResult.java" />
-        <option value="$PROJECT_DIR$/src/Structures/PieceColor.java" />
-        <option value="$PROJECT_DIR$/src/Structures/PieceMoveResult.java" />
-        <option value="$PROJECT_DIR$/src/Structures/PlayState.java" />
         <option value="$PROJECT_DIR$/src/Structures/Square.java" />
         <option value="$PROJECT_DIR$/src/Pieces/Pawn.java" />
         <option value="$PROJECT_DIR$/src/Structures/Board.java" />
@@ -219,7 +220,18 @@
         <option value="$PROJECT_DIR$/src/MatinChessLib/Board.java" />
         <option value="$PROJECT_DIR$/src/MatinChessLib/Piece.java" />
         <option value="$PROJECT_DIR$/src/MatinChessLib/King.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/Piece.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/Queen.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/Rook.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/WhitePawn.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/Bishop.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/BlackPawn.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/Knight.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/Pawn.java" />
+        <option value="$PROJECT_DIR$/src/Structures/MatinChessLib/Board.java" />
+        <option value="$PROJECT_DIR$/src/Structures/MatinChessLib/PieceMoveResult.java" />
         <option value="$PROJECT_DIR$/src/MatinChessLib/MatinChess.java" />
+        <option value="$PROJECT_DIR$/src/Pieces/MatinChessLib/King.java" />
       </list>
     </option>
   </component>
@@ -246,29 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
@@ -281,6 +270,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -303,17 +293,66 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Pieces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Pieces" type="462c0819:PsiDirectoryNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Structures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MatinChessLib" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Structures" type="462c0819:PsiDirectoryNode" />
+              <item name="MatinChessLib" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MatinChess" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="MatinChessLib" />
       <recent name="" />
     </key>
   </component>
@@ -448,6 +487,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -463,7 +503,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -482,36 +522,24 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MatinChessLib/MatinChess.java</url>
-          <line>193</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/WhitePawn.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/WhitePawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BlackPawn.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/BlackPawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -525,7 +553,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Knight.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Knight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
@@ -533,18 +561,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Piece.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
           <folding>
-            <element signature="e#3142#3143#0" expanded="true" />
-            <element signature="e#3227#3228#0" expanded="true" />
+            <element signature="e#3118#3119#0" expanded="true" />
+            <element signature="e#3203#3204#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BoardHistory.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/BoardHistory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
@@ -552,7 +580,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
           <caret line="97" column="69" lean-forward="false" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
@@ -560,7 +588,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/PlayState.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PlayState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
@@ -568,43 +596,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Queen.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Queen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Rook.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Rook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/WhitePawn.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/WhitePawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BlackPawn.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/BlackPawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -618,18 +638,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Piece.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
           <folding>
-            <element signature="e#3142#3143#0" expanded="true" />
-            <element signature="e#3227#3228#0" expanded="true" />
+            <element signature="e#3118#3119#0" expanded="true" />
+            <element signature="e#3203#3204#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Knight.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Knight.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
@@ -637,7 +657,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BoardHistory.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/BoardHistory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
@@ -645,7 +665,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1581">
           <caret line="97" column="69" lean-forward="false" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
@@ -653,7 +673,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/PlayState.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PlayState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
@@ -661,47 +681,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Queen.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Queen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Rook.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Rook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/WhitePawn.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/WhitePawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BlackPawn.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/BlackPawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Bishop.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Bishop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
@@ -709,7 +721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Pawn.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Pawn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
@@ -717,7 +729,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BoardHistory.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/BoardHistory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
@@ -725,7 +737,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
@@ -733,7 +745,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Movement.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Movement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -741,7 +753,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/MoveResult.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/MoveResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
@@ -749,7 +761,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/ChessSquare.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/ChessSquare.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
@@ -757,7 +769,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/PieceMoveResult.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PieceMoveResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
@@ -765,7 +777,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/PlayState.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PlayState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
@@ -783,31 +795,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BoardHistory.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Bishop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        <state relative-caret-position="306">
+          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Movement.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/BlackPawn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="340">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/MoveResult.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Knight.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        <state relative-caret-position="323">
+          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/ChessSquare.java">
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Pawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Queen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Rook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/WhitePawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="58" lean-forward="false" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/BoardHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/ChessSquare.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
@@ -815,9 +867,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Location.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Location.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="238">
           <caret line="14" column="59" lean-forward="false" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
           <folding>
             <element signature="e#257#258#0" expanded="true" />
@@ -826,23 +878,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Knight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="26" column="63" lean-forward="false" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Pawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/PieceColor.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Movement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
@@ -850,95 +886,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/PieceMoveResult.java">
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/MoveResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PieceColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PieceMoveResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/PlayState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/PlayState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Queen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="26" column="64" lean-forward="false" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Rook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="64" lean-forward="false" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/WhitePawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="23" column="74" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="98" column="33" lean-forward="false" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Piece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="125" column="5" lean-forward="false" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
-          <folding>
-            <element signature="e#3142#3143#0" expanded="true" />
-            <element signature="e#3227#3228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/King.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="143" column="109" lean-forward="false" selection-start-line="143" selection-start-column="109" selection-end-line="143" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/BlackPawn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MatinChessLib/Bishop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MatinChessLib/MatinChess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="40" column="53" lean-forward="true" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+        <state relative-caret-position="-3479">
+          <caret line="31" column="42" lean-forward="false" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Structures/MatinChessLib/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="90" column="17" lean-forward="false" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/King.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="139" column="60" lean-forward="false" selection-start-line="139" selection-start-column="60" selection-end-line="139" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pieces/MatinChessLib/Piece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+          <folding>
+            <element signature="e#3118#3119#0" expanded="true" />
+            <element signature="e#3203#3204#0" expanded="true" />
           </folding>
         </state>
       </provider>
