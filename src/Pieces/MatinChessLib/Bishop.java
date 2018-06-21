@@ -26,8 +26,8 @@ class Bishop extends Piece {
     List<ChessSquare> GetNextMoves(boolean checkKing) {
         List<ChessSquare> nextMoves = new ArrayList<>(64);
 
-        //final byte x = GetLocation().file;
-        //final byte y = GetLocation().rank;
+        final byte x = GetLocation().file;
+        final byte y = GetLocation().rank;
 	//I did not like them at all
         for (int i = x + 1, j = y + 1; i < 8 && j < 8; i++, j++)
             if (AppendSquare(i, j, nextMoves, checkKing))
